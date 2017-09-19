@@ -3,8 +3,23 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from "axios"
+
+// 公用的组件在这里注册
+import vHeader from './components/public/Header.vue'
+import vContent from './components/public/Content.vue'
+import vFooter from './components/public/Footer.vue'
+
+//全局注册
+Vue.component("v-header",vHeader)
+Vue.component("v-content",vContent)
+Vue.component("v-footer",vFooter)
+
 
 Vue.config.productionTip = false
+
+// 给 vue扩展 全局使用的插件
+Vue.prototype.$http = axios
 
 /* eslint-disable no-new */
 new Vue({
